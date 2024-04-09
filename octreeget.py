@@ -78,18 +78,22 @@ def execute_sql_query(queries, database="postgres", username="test", password="1
             conn.close()
 
 def get_boundingbox(result): #返回中心点和边框大小值
-    x_discrepancy = result[0] - result[1]
+    x_discrepancy = result[0] - result[1] # x轴边框
     y_discrepancy = result[2] - result[3]
     z_discrepancy = result[4] - result[5]
-    x_middle = x_discrepancy/span
-    y_middle = y_discrepancy/span
-    z_middle = z_discrepancy/span
+    x_spacing = x_discrepancy/span # 单位跨度
+    y_spacing = y_discrepancy/span
+    z_spacing = z_discrepancy/span
+    x_middle = result[1] + x_spacing #中间值
+    y_middle = result[3] + y_spacing
+    z_middle = result[5] + z_spacing
 
     print('边框：' + '  ' + str(x_discrepancy) + '   ' + str(y_discrepancy) + '   ' + str(z_discrepancy))
+    print('单位跨度：' + '  ' + str(x_spacing) + '   ' + str(y_spacing) + '   ' + str(z_spacing))
     print('中心点' + '  ' + str(x_middle) + '   ' + str(y_middle) + '   ' + str(z_middle))
-    #return x_discrepancy, y_discrepancy, z_discrepancy, x_middle, y_middle, z_middle
+    #return x_discrepancy, y_discrepancy, z_discrepancy, x_spacing, y_spacing, z_spacing, x_middle, y_middle, z_middle
 
-# 调用函数并传入相应参数
+# 查询信息的sql
 sql_queries = [
    # "SELECT Count(*), Sum(PC_NumPoints(pa)) FROM laoshan400 l;",
     "SELECT PC_PatchMax(pa, 'x') FROM laoshan l;",
@@ -99,9 +103,7 @@ sql_queries = [
     "SELECT PC_PatchMax(pa, 'z') FROM laoshan l;",
     "SELECT PC_PatchMin(pa, 'z') FROM laoshan l;"
 ]
-
 execute_sql_query(sql_queries) #执行sql指令
-
 
 get_boundingbox(global_results)
 
