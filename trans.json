@@ -1,0 +1,14 @@
+[
+    {
+        "type":"readers.las",
+        "filename":"G:\\pointcloudsrc\\laoshan.las"
+    },
+    {
+        "type": "filters.sample",
+        "cell": 1 // 体素大小 必须只设置 'cell' 或 'radius' 中的一个
+    },
+    {
+        "type":"writers.las",
+        "filename":"G:\\pointcloudsrc\\laoshan5.las"
+    }
+]

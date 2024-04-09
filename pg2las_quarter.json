@@ -1,0 +1,12 @@
+[
+    {
+        "type":"readers.pgpointcloud",
+        "connection": "host='192.168.228.50' dbname='postgres' user='test' password='123456' port='5432'",
+        "table":"laoshan400",
+        "column":"pa"
+    },
+    {
+        "type":"writers.las",
+        "filename":"C:\\Users\\Admin\\Desktop\\OctreeRender\\pointsave\\laoshan_quarter.las"
+    }
+]

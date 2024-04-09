@@ -1,0 +1,10 @@
+[
+    {
+        "type": "readers.fbx",
+        "filename": "C:\\Users\\Admin\\Desktop\\1.fbx"
+    },
+    {
+        "type": "writers.las",
+        "filename": "C:\\Users\\Admin\\Desktop\\1_biandiazhan.las"
+    }
+]

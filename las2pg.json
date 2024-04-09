@@ -1,0 +1,15 @@
+[
+    {
+    "type":"readers.las",
+    "filename":"C:\\Users\\Admin\\Desktop\\OctreeRender\\pointsave\\laoshan5.las"
+    },
+    {
+    "type": "writers.pgpointcloud",
+    "connection": "host='192.168.228.50' dbname='postgres' user='test' password='123456' port='5432'",
+    "table": "laoshan_srid",
+    "compression": "dimensional", 
+    "srid": "4326",
+    "pcid": "1"
+    }
+
+]
